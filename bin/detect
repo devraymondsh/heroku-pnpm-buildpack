@@ -1,0 +1,12 @@
+#!/bin/sh
+
+package_json=$(find "$1" -name "package.json" | head -n 1)
+pnpm_lock_yaml=$(find "$1" -name "pnpm-lock.yaml" | head -n 1)
+
+if [ -f "$package_json" ] && [ -f "$pnpm_lock_yaml" ]; then
+    echo "PNPM"
+    exit 0
+else
+    echo "No package.json or pnpm-lock.yaml was found in the project!"
+    exit 1
+fi
