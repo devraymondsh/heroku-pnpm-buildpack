@@ -13,8 +13,8 @@ run_prebuild() {
 }
 
 run_build() {
-    build_script
-    heroku_postbuild_script
+    local build_script
+    local heroku_postbuild_script
 
     build_script=$(json_get_key "$package_json" ".scripts.build")
     heroku_postbuild_script=$(json_get_key "$package_json" ".scripts[\"heroku-postbuild\"]")
