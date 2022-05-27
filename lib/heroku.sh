@@ -23,6 +23,8 @@ run_build() {
 
     cd "$project_directory" || exit
 
+    pnpm install
+
     if [[ $heroku_postbuild_script ]]; then
         pnpm run heroku-postbuild
     elif [[ $build_script ]]; then
