@@ -76,7 +76,7 @@ install_binaries() {
     fi
 
     echo "-----> Install pnpm"
-    curl -fsSL https://get.pnpm.io/install.sh | sh -
+    npm install -g pnpm@latest
 
     pnpm config set store-dir "$CACHE_DIR"/.pnpm-store
 }
