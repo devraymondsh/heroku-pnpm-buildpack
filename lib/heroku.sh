@@ -3,7 +3,7 @@
 package_json=$(find "$1" -name "package.json" | head -n 1)
 
 run_prebuild() {
-    heroku_prebuild_script
+    local heroku_prebuild_script
 
     heroku_prebuild_script=$(json_get_key "$package_json" ".scripts[\"heroku-prebuild\"]")
 
